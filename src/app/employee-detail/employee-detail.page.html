@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Employee Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+          *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title><h2>{{employee.name}}</h2></mat-card-title>
+        <mat-card-subtitle>{{employee.email}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <dl>
+          <dt>Employee Designation:</dt>
+          <dd>{{employee.designation}}</dd>
+          <dt>Employee Phone No.:</dt>
+          <dd>{{employee.phoneNumber}}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-flat-button color="primary" (click)="editEmployee(employee._id)"><mat-icon>edit</mat-icon></a>
+        <a mat-flat-button color="warn" (click)="deleteEmployee(employee._id)"><mat-icon>delete</mat-icon></a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ion-content>

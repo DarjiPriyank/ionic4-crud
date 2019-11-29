@@ -6,11 +6,16 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ScrollingModule,
+    DragDropModule,
     RouterModule.forChild([
       {
         path: '',
